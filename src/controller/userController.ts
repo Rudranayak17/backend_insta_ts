@@ -38,5 +38,5 @@ export const loginUser = TryCatch(async (req: Request<{}, {}, IUser>, res: Respo
     }
 
 
-    sendToken(user, 200, res);
+    sendToken(user, 200, res,"login successfully");
 });

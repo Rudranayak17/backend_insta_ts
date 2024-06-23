@@ -13,6 +13,7 @@ const sendToken = <T extends IUser>(
     user: T,
     statusCode = 200,
     res: Response,
+    message: string = "User registered successfully"
 ) => {
     const token = user.getJWTToken();
 
@@ -31,7 +32,7 @@ const sendToken = <T extends IUser>(
         .cookie('token', token, options)
         .json({
             success: true,
-            message: "User registered successfully",
+            message: message,
             user,
             token,
         });
